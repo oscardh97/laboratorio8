@@ -40,7 +40,13 @@ int main(int argc, char const *argv[]){
 			int indice4;
 			cout << "Ingrese el indice: ";
 			cin >> indice4;
-			// todosRobots[indice4]->
+			double precio2, amperios2;
+			cout << "precio2";
+			cin >> precio2;
+			cout << "amperios";
+			cin >> amperios2;
+			todosRobots[indice4]->setAmperios(amperios2);
+			todosRobots[indice4]->setPrecio(precio2);
 		} else if (opcion == 3) {
 			int indice3;
 			cout << "Ingrese el indice: ";
@@ -57,7 +63,9 @@ int main(int argc, char const *argv[]){
 			cout << "Ingrese el indice: ";
 			cin >> indice6;
 			int size = robotComprados.size();
-			robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, 5);
+			robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, size);
+			//Aunque envie el ultimo parametro en duro no funciona
+			// robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, 5);
 		} else if (opcion == 6) {
 			int indice2;
 			cout << "Ingrese el indice: ";
