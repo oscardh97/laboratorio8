@@ -12,6 +12,13 @@ int main(int argc, char const *argv[]){
 	double dineroGlobal = 15000, amperiosGlobal = 20000;
 	while(true){
 		int opcion;
+		cout << "1. Agregar Robots" << endl;
+		cout << "2. Modificar Robots" << endl;
+		cout << "3. Eliminar Robots" << endl;
+		cout << "4. Comprar Robots (usuario)" << endl;
+		cout << "5. Usar función Robots (usuario)" << endl;
+		cout << "6. Botar Robots(usuario)" << endl;
+		cout << "7. Salir" << endl;
 		cout << "Ingrese una opcion: ";
 		cin >> opcion;
 		if (opcion == 1) {
@@ -63,7 +70,7 @@ int main(int argc, char const *argv[]){
 			cout << "Ingrese el indice: ";
 			cin >> indice6;
 			int size = robotComprados.size();
-			robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, size);
+			bool pudo = robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, size);
 			//Aunque envie el ultimo parametro en duro no funciona
 			// robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, 5);
 		} else if (opcion == 6) {
@@ -72,6 +79,9 @@ int main(int argc, char const *argv[]){
 			cin >> indice2;
   			robotComprados.erase (robotComprados.begin(), robotComprados.begin() + indice2);
 
+		} else if (opcion == 6) {
+			cout << "Adios";
+			break;
 		}
 	}
 	return 0;
