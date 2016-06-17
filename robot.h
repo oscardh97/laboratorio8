@@ -8,10 +8,14 @@ class Robot{
 		double amperios, precio;
 	public:
 		Robot(string, string, double, double);
-		void setNoSerie(string);
-		void setMaterial(string);
-		void setAmperios(double);
-		void setPrecio(double);
-		virtual bool funcionar();
+		Robot();
+		// void setNoSerie(string);
+		// void setMaterial(string);
+		// void setAmperios(double);
+		// void setPrecio(double);
+		// virtual bool funcionar();
+		virtual bool funcionar(double&, double&, int);
 		virtual string toString()const;
+		// virtual bool funcionar(int, double&);
+		// virtual string toString()const;
 };

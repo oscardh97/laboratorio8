@@ -3,10 +3,10 @@
 #include <iostream> 
 #include "robot.h" 
 using namespace std; 
-class Sirviente : public Robot {
+class Abastecedor : public Robot{
 	int oxido;
 	public:
-		Sirviente(string, string, double, double);
+		Abastecedor(string, string, double, double);
 		bool funcionar(double&, double&, int);
 		// string toString()const;
 };
