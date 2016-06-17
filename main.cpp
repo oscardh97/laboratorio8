@@ -6,12 +6,15 @@
 #include <iostream>
 #include <sstream>
 using namespace std;
+void imprimirVector(vector <Robot*>);
 int main(int argc, char const *argv[]){
 	vector <Robot*> todosRobots;
 	vector <Robot*> robotComprados;
 	double dineroGlobal = 15000, amperiosGlobal = 20000;
 	while(true){
 		int opcion;
+		cout << "DINERO: " << dineroGlobal << endl;
+		cout << "AMPERIOS: " << amperiosGlobal << endl;
 		cout << "1. Agregar Robots" << endl;
 		cout << "2. Modificar Robots" << endl;
 		cout << "3. Eliminar Robots" << endl;
@@ -45,6 +48,7 @@ int main(int argc, char const *argv[]){
 			}
 		} else if (opcion == 2) {
 			int indice4;
+			imprimirVector(todosRobots);
 			cout << "Ingrese el indice: ";
 			cin >> indice4;
 			double precio2, amperios2;
@@ -55,11 +59,13 @@ int main(int argc, char const *argv[]){
 			todosRobots[indice4]->setAmperios(amperios2);
 			todosRobots[indice4]->setPrecio(precio2);
 		} else if (opcion == 3) {
+			imprimirVector(todosRobots);
 			int indice3;
 			cout << "Ingrese el indice: ";
 			cin >> indice3;
   			todosRobots.erase (todosRobots.begin(), todosRobots.begin() + indice3);
 		} else if (opcion == 4) {
+			imprimirVector(todosRobots);
 			int indice;
 			cout << "Ingrese el indice: ";
 			cin >> indice;
@@ -67,13 +73,18 @@ int main(int argc, char const *argv[]){
   			todosRobots.erase (todosRobots.begin(), todosRobots.begin() + indice);
 		} else if (opcion == 5) {
 			int indice6;
+			imprimirVector(robotComprados);
 			cout << "Ingrese el indice: ";
 			cin >> indice6;
 			int size = robotComprados.size();
 			bool pudo = robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, size);
+			if (!pudo) {
+				cout << "ERROR AL EJECUTAR FUNCION" << endl;
+			}
 			//Aunque envie el ultimo parametro en duro no funciona
 			// robotComprados[indice6]->funcionar(dineroGlobal, amperiosGlobal, 5);
 		} else if (opcion == 6) {
+			imprimirVector(robotComprados);
 			int indice2;
 			cout << "Ingrese el indice: ";
 			cin >> indice2;
